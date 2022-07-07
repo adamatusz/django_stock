@@ -17,11 +17,11 @@ import json
 
 
 def home(request):
-    # pk_d767c579b36545038b3bcbf841ac8f21
+
     if request.method == 'POST':
         ticker = request.POST['ticker']
         api_request = requests.get(
-            "https://cloud.iexapis.com/v1/stock/" + ticker + "/quote?token=pk_d767c579b36545038b3bcbf841ac8f21")
+            "https://cloud.iexapis.com/v1/stock/" + ticker + "/quote?token=")
 
         try:
             api = json.loads(api_request.content)
@@ -76,7 +76,7 @@ def add_stock(request):
         output = []
 
         for ticker_item in ticker:
-            api_request = requests.get("https://cloud.iexapis.com/v1/stock/" + str(ticker_item) + "/quote?token=pk_d767c579b36545038b3bcbf841ac8f21")
+            api_request = requests.get("https://cloud.iexapis.com/v1/stock/" + str(ticker_item) + "/quote?token=")
 
             try:
                 api = json.loads(api_request.content)
