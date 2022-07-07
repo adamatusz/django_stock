@@ -44,11 +44,11 @@ def signup(request):
             form.save()
             username = form.cleaned_data.get('username')
             raw_passwd = form.cleaned_data.get('password')
-            user = authenticate(request, username=username, password=raw_passwd)
+            user = authenticate(username=username, password=raw_passwd)
             if user is not None:
                 login(request, user)
             else:
-                return redirect('registration/signup.html')
+                return redirect('login')
         # what if form is not valid?
         # we should display a message in signup.html
     else:
