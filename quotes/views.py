@@ -67,7 +67,7 @@ def add_stock(request):
             stock = form.save(commit=False)
             stock.user = request.user
             stock.save()
-            messages.success(request, "Notowania zostały dodane!")
+            messages.success(request, "Stock Has Been Added!")
             return redirect('add_stock')
 
     else:

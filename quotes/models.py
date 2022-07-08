@@ -11,6 +11,7 @@ class Stock(models.Model):
 
     class Meta:
         unique_together = ("user", "ticker")
+        # print(unique_together)
 
     def __str__(self):
         return self.ticker

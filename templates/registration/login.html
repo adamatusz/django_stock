@@ -2,14 +2,17 @@
 
 {% block title %}Login{% endblock %}
 
+
+
 {% block content %}
-    <h2 class="text-center">LogIn</h2>
+    <h2 class="text-center">Log In</h2><br/>
+    <h6 class="text-center"> Only For Registered </h6>
 
    <div class="col-md-6 offset-md-4">
         <form method="post">
           {% csrf_token %}
           {{ form.as_p }}
-            <input type="submit" value="LogIn"> OR
+            <input type="submit" value="Log In"> OR
         </form></div><br/>
 
 
@@ -18,7 +21,7 @@
        <div class="col-md-7 offset-md-4">
             <form action="{% url 'signup' %}" class="form-inline my-2 my-lg-0" method="POST">
                 {% csrf_token %}
-                <input class="btn btn-primary" type="submit" value="SignUp">
+                <input class="btn btn-primary" type="submit" value="Sign Up">
             </form>
        </div>
 </div>
