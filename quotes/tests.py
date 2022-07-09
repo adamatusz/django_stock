@@ -1,4 +1,4 @@
-from django.test import TestCase
+
 import pytest
 from django.contrib.auth import get_user_model
 from django.urls import reverse
